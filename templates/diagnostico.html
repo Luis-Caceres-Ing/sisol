@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Diagnóstico por Imagen{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h4 class="text-center mb-4"><i class="bi bi-cloud-upload-fill text-primary"></i> Diagnóstico por Imagen</h4>
+
+    <form method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="file" class="form-label">Seleccione una imagen de rayos X</label>
+            <input type="file" class="form-control" name="file" id="file" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">
+            <i class="bi bi-search-heart-fill"></i> Predecir
+        </button>
+    </form>
+
+    {% if result %}
+        <div class="alert alert-info mt-4 text-center">
+            <strong>Resultado:</strong> {{ result }}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

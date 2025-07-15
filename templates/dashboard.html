@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <h3 class="mb-4">Bienvenido, Dr. {{ username }}</h3>
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-heart-pulse-fill text-danger fs-1"></i>
+                        <h5 class="card-title mt-3">Diagnóstico</h5>
+                        <p class="card-text">Realice un diagnóstico por imagen.</p>
+                        <a href="{{ url_for('diagnostico') }}" class="btn btn-primary">Ir al Diagnóstico</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-person-lines-fill text-success fs-1"></i>
+                        <h5 class="card-title mt-3">Pacientes</h5>
+                        <p class="card-text">Gestione sus pacientes registrados.</p>
+                        <a href="{{ url_for('pacientes') }}" class="btn btn-secondary">Ver Pacientes</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-calendar-check text-info fs-1"></i>
+                        <h5 class="card-title mt-3">Citas</h5>
+                        <p class="card-text">Agende y consulte citas médicas.</p>
+                        <a href="{{ url_for('citas') }}" class="btn btn-success">Ver Citas</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
